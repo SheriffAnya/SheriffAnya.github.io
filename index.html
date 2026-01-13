@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Неоновый текст</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        .neon-box {
+            padding: 50px;
+            border-radius: 20px;
+            background: rgba(5, 5, 30, 0.7);
+            box-shadow: 
+                0 0 20px rgba(0, 200, 255, 0.5),
+                inset 0 0 20px rgba(0, 150, 255, 0.2);
+            border: 3px solid rgba(0, 200, 255, 0.5);
+            max-width: 900px;
+            width: 100%;
+            animation: pulse 4s infinite alternate;
+        }
+
+        .neon-text {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff;
+            letter-spacing: 3px;
+            line-height: 1.4;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 
+                    0 0 20px rgba(0, 200, 255, 0.5),
+                    inset 0 0 20px rgba(0, 150, 255, 0.2);
+                border-color: rgba(0, 200, 255, 0.5);
+            }
+            50% {
+                box-shadow: 
+                    0 0 30px rgba(0, 200, 255, 0.8),
+                    inset 0 0 25px rgba(0, 150, 255, 0.3);
+                border-color: rgba(0, 255, 255, 0.8);
+            }
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .neon-text {
+                font-size: 2.5rem;
+            }
+            
+            .neon-box {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .neon-text {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+            
+            .neon-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="neon-box">
+        <div class="neon-text">
+            простите меня за моё поведение, за изменение ников на гадости, за писание гадостей через ваш ник, просто, простите меня за всё =(
+        </div>
+    </div>
+</body>
+</html>
